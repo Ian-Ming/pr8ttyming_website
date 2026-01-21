@@ -2443,3 +2443,20 @@ input, select, textarea {
 					}
 
 	}
+
+	/* Mobile fixes */
+@media screen and (max-width: 736px) {
+
+  /* HERO: keep headshot from overlapping intro text */
+  #top .image.fit {
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Add breathing room before the header text */
+  #top header {
+    margin-top: 0.75rem;
+  }
+}
