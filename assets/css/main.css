@@ -2460,3 +2460,17 @@ input, select, textarea {
     margin-top: 0.75rem;
   }
 }
+@media screen and (max-width: 736px) {
+
+  /* WORK CARDS: prevent featured icon from getting cropped */
+  .box.style1 {
+    overflow: visible;
+  }
+
+  .box.style1 .icon.featured {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+
