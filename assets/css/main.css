@@ -2526,6 +2526,31 @@ input, select, textarea {
     text-align: center;
   }
 }
+/* Cap headshot height so it never overlaps header */
+@media screen and (max-width: 1200px) {
+  #top .image.fit {
+    max-width: 320px;
+  }
+
+  #top .image.fit img {
+    width: 320px !important;
+    height: 320px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+  }
+
+  /* push text down below the image */
+  #top header {
+    margin-top: 1.5rem !important;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #top .image.fit img {
+    width: 260px !important;
+    height: 260px !important;
+  }
+}
 
 
 
