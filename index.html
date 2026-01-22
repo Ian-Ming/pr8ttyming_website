@@ -226,10 +226,12 @@
 									</header>
 									<div class="row">
 										<div class="col-12">
+											<p id="form-status" style="display:none; margin-bottom: 1rem;"> Thanks — your message was sent. I’ll get back to you soon.</p>
 											<form method="POST" action="https://formspree.io/f/mdaavpkn">
 
   												<input type="hidden" name="_subject" value="New message from ianmingcloud.com" />
   												<input type="hidden" name="_captcha" value="false" />
+												<input type="hidden" name="_next" value="https://ianmingcloud.com/#contact" />
 
   												<div class="row">
     												<div class="col-6 col-12-small">
@@ -287,5 +289,14 @@
 							<script src="assets/js/breakpoints.min.js"></script>
 							<script src="assets/js/util.js"></script>
 							<script src="assets/js/main.js" defer></script>
+
+							<script>
+  							// Show success message after Formspree redirect
+  							if (window.location.search.includes("success")) {
+    						const status = document.getElementById("form-status");
+    						if (status) status.style.display = "block";
+  							}
+  							</script>
+
 
 						</body>
