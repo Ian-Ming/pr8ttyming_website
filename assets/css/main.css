@@ -2472,16 +2472,36 @@ input, select, textarea {
     margin-bottom: 1rem;
   }
 }
+/* === HERO LAYOUT FIX: stop image/text overlap on mid + small screens === */
+@media screen and (max-width: 980px) {
 
-/* === Fix hero image overlapping text (HTML5UP override) === */
-#top .image {
-  position: relative !important;
-  margin-bottom: 2rem;
+  /* kill float-based columns just for the hero */
+  #top .row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  #top .row > [class*="col-"] {
+    width: 100% !important;
+    float: none !important;
+    clear: both !important;
+  }
+
+  /* spacing between image and text */
+  #top .image.fit {
+    max-width: 320px;
+    margin: 0 auto 1.75rem auto !important;
+  }
+
+  /* keep the text centered + readable */
+  #top header,
+  #top p,
+  #top .button {
+    text-align: center;
+  }
 }
 
-#top .image img {
-  position: relative !important;
-}
 
 
 
