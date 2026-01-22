@@ -2489,6 +2489,44 @@ input, select, textarea {
   #top .image.fit { max-width: 260px; }
 }
 
+/* Force HERO columns to stack + clear at smaller widths (prevents overlap) */
+@media screen and (max-width: 1200px) {
+
+  /* clear any float grid behavior */
+  #top .row:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  /* make both hero columns full width */
+  #top .col-4,
+  #top .col-8,
+  #top .col-5-large,
+  #top .col-7-large,
+  #top .col-12-medium {
+    width: 100% !important;
+    float: none !important;
+    clear: both !important;
+  }
+
+  /* ensure the image block pushes the text down */
+  #top .col-4 {
+    margin-bottom: 2.75rem !important;
+  }
+
+  #top .image.fit {
+    margin: 0 auto !important;
+    max-width: 320px;
+  }
+
+  #top header,
+  #top p,
+  #top .button {
+    text-align: center;
+  }
+}
+
 
 
 
