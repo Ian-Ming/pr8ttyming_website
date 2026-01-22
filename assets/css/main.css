@@ -2473,4 +2473,15 @@ input, select, textarea {
   }
 }
 
+/* === Fix hero image overlapping text (HTML5UP override) === */
+#top .image {
+  position: relative !important;
+  margin-bottom: 2rem;
+}
+
+#top .image img {
+  position: relative !important;
+}
+
+
 
