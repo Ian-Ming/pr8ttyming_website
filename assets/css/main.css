@@ -2443,23 +2443,6 @@ input, select, textarea {
 					}
 
 	}
-
-	/* Mobile fixes */
-@media screen and (max-width: 736px) {
-
-  /* HERO: keep headshot from overlapping intro text */
-  #top .image.fit {
-    max-width: 260px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1.5rem;
-  }
-
-  /* Add breathing room before the header text */
-  #top header {
-    margin-top: 0.75rem;
-  }
-}
 @media screen and (max-width: 736px) {
 
   /* WORK CARDS: prevent featured icon from getting cropped */
@@ -2472,10 +2455,9 @@ input, select, textarea {
     margin-bottom: 1rem;
   }
 }
+
 /* === HERO LAYOUT FIX: stop image/text overlap on mid + small screens === */
 @media screen and (max-width: 980px) {
-
-  /* kill float-based columns just for the hero */
   #top .row {
     display: flex !important;
     flex-direction: column !important;
@@ -2488,19 +2470,26 @@ input, select, textarea {
     clear: both !important;
   }
 
-  /* spacing between image and text */
   #top .image.fit {
     max-width: 320px;
-    margin: 0 auto 1.75rem auto !important;
+    margin: 0 auto 2.75rem auto !important;
   }
 
-  /* keep the text centered + readable */
   #top header,
   #top p,
   #top .button {
     text-align: center;
+    position: relative;
+    z-index: 2;
   }
 }
+
+/* Slightly smaller headshot on phones */
+@media screen and (max-width: 736px) {
+  #top .image.fit { max-width: 260px; }
+}
+
+
 
 
 
