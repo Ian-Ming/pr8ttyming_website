@@ -2575,6 +2575,13 @@ input, select, textarea {
     max-width: 260px;
   }
 }
+/* Fine-tune headshot centering on mobile */
+@media screen and (max-width: 736px) {
+  #top .image.fit {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
 
 
 
