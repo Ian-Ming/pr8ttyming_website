@@ -2487,6 +2487,26 @@ input, select, textarea {
   height: auto !important;
   display: block;
 }
+/* === HERO IMAGE: force oval + prevent template 'fit' styles === */
+.hero-image {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto 2rem auto;
+}
+
+.hero-image img {
+  width: 100% !important;
+  height: 360px !important;
+  object-fit: cover !important;
+  border-radius: 999px !important;
+  display: block;
+}
+@media screen and (max-width: 736px) {
+  .hero-image { max-width: 260px; }
+  .hero-image img { height: 260px !important; }
+}
+
 
 
 
