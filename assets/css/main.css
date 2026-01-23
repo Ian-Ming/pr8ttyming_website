@@ -2506,6 +2506,26 @@ input, select, textarea {
   .hero-image { max-width: 260px; }
   .hero-image img { height: 260px !important; }
 }
+/* === HERO DESKTOP CONSTRAINTS === */
+.hero-single {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.hero-image {
+  display: block;
+  max-width: 420px;   /* ← controls image size on desktop */
+  margin: 0 auto 2rem auto;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+}
+
 
 
 
