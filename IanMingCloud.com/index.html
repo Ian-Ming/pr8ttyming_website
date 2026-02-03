@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Hi, I am Ian Ming</title>
+</head>
+<body>
+  <nav>
+    <div class="Logo">Ming's Portfolio</div>
+    <div class="nav-links">
+        <a href="#" onclick="showSection('home-view')">Home</a>
+        <a href="#" onclick="showSection('education-view')">Education</a>
+        <a href="#" onclick="showSection('experience-view')">Experience</a>
+        <a href="#" onclick="showSection('accomplishments-view')">Accomplishments</a>
+    </div>
+  </nav>
+  <main>
+    <!-- HOME -->
+    <section>
+        <div class="container">
+                <div class="profile-side">
+                    <img src="https://via.placeholder.com/300" class="profile-pic" alt="Ian Ming">
+                    <h3>Connect with me</h3>
+                    <div class="social-links">
+                        <a href="#" class="card">Contact</a>
+                        <a href="#" class="card">GitHub</a>
+                        <a href="#" class="card">Linkedin</a>
+                        <a href="#" class="card">Resume</a>
+                    </div>
+                </div>
+            <div class="content-side"> 
+                <div id="home-view" class="view-section active">
+                    <div class="card bio-card">
+                        <h1>Ian Ming</h1>
+                        <div class="uni-subhead"> Business Administration • York University (2026) </div>
+                            <p> Ian Ming is Business and IT student with hands-on experience
+                            deploying and maintaining static websites using cloud-based workflows.
+                            Focused on translating business needs into practical technical solutions
+                            while building toward a career in cloud and IT operations.</p>
+                        </div>
+                    <div class="card skills-card">
+                        <h3>Technical Skills & Software</h3>
+                        <div class="pill-container">
+                            <span>Python</span>
+                            <span>Git</span>
+                            <span>HTML</span>
+                        </div>
+                    </div>
+                    <div class="card tools-card">
+                        <h3>Tools</h3>
+                        <div class="pill-container">
+                            <span>VScode</span>
+                            <span>Bash</span>
+                            <span>Excel</span>
+                            <span>Azure</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="education-view" class="view-section">
+                    <div class="card">
+                        <h3>Education</h3>
+                        <p>Business Administration Degree 2026 </p>
+                    </div>
+                    </div>
+                <div id="experience-view" class="view-section">
+                    <div class="card">
+                        <h3>Experience</h3>
+                        <P>Projects Ive completed in class, "intelliHeat" "consulting project"</P>
+                    </div>
+                </div>
+                <div id="accomplishments-view" class="view-section">
+                    <div class="card">
+                        <h3>Accomplishments</h3>
+                        <p>Basketball, NSBE, Weightlifting, etc</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+  </main>
+
+  <script>
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.view-section');
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+
+        const target = document.getElementById(sectionId);
+        if (target) {
+            target.classList.add('active');
+        }
+    }
+
+  </script>
+
+</body>
+</html>
