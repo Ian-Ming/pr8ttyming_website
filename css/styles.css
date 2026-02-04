@@ -16,8 +16,25 @@ body {
     font-family: var(--font-main);
 }
 
+body.light-mode {
+    --bg-color: #f4f4f4;
+    --primary-color: #d35400; /* A darker orange for better contrast on white */
+}
+/* This makes cards look better in light mode */
+body.light-mode .card {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
 h1, h2, h3, p {
     color: var(--primary-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px; /* This gives it that smooth pro look you have now */
 }
 
 main{
@@ -87,6 +104,8 @@ nav a{
     text-decoration: none;
     width: 100%;
     max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
     box-sizing: border-box;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
@@ -173,4 +192,28 @@ button:hover{
 @keyframes fadeIn{
     from {opacity: 0; transform: translateY(10px); }
     to {opacity: 1; transform: translateY(0px);}
+}
+
+/* Responsive Design for Phones */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Force everything into one column */
+        padding: 20px;              /* Reduce padding so it's not too cramped */
+        gap: 20px;
+    }
+
+    .profile-side, .content-side {
+        align-items: center;        /* Center your headshot and text on mobile */
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;     /* Stack "Ming's Portfolio" on top of the links */
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;            /* Allow buttons to wrap to a new line if needed */
+        justify-content: center;
+    }
 }

@@ -15,6 +15,7 @@
         <a href="#" onclick="showSection('experience-view')">Experience</a>
         <a href="#" onclick="showSection('projects-view')">Projects</a>
         <a href="#" onclick="showSection('accomplishments-view')">Accomplishments</a>
+        <button id="theme-toggle">🌓 Toggle Theme</button>
     </div>
   </nav>
   <main>
@@ -76,6 +77,7 @@
                         <h3>Projects</h3>
                         <p>Coming Soon</p>
                     </div>
+                    </div>
                 <div id="accomplishments-view" class="view-section">
                     <div class="card">
                         <h3>Accomplishments</h3>
@@ -101,6 +103,11 @@
             target.classList.add('active');
         }
     }
+
+    const btn = document.getElementById('theme-toggle');
+btn.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+});
 
   </script>
 
