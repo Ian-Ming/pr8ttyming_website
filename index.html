@@ -109,6 +109,11 @@ btn.addEventListener('click', () => {
     document.body.classList.toggle('light-mode');
 });
 
+fetch('https://your-azure-function-url.com/api/visitorcounter')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('counter-display').innerText = data;
+  });
   </script>
 
 </body>
