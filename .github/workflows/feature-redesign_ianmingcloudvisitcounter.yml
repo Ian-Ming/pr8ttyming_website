@@ -1,6 +1,5 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
 # More GitHub Actions for Azure: https://github.com/Azure/actions
-# More info on Python, GitHub Actions, and Azure Functions: https://aka.ms/python-webapps-actions
 
 name: Build and deploy Python project to Azure Function App - IanMingCloudVisitCounter
 
@@ -11,59 +10,25 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: 'api' # set this to the path to your web app project, defaults to the repository root
-  PYTHON_VERSION: '3.12' # set this to the python version to use (supports 3.6, 3.7, 3.8)
+  PYTHON_VERSION: '3.12'
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: read #This is required for actions/checkout
+      id-token: write
+      contents: read
 
     steps:
-      - name: Checkout repository
+      - name: 'Checkout GitHub Action'
         uses: actions/checkout@v4
 
-      - name: Setup Python version
+      - name: 'Setup Python ${{ env.PYTHON_VERSION }} Environment'
         uses: actions/setup-python@v5
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
-      - name: Create and start virtual environment
-        run: |
-          python -m venv venv
-          source venv/bin/activate
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-        working-directory: api  # This is the "missing link"
-
-      # Optional: Add step to run tests here
-
-      - name: Zip artifact for deployment
-        run: zip -r release.zip .
-        working-directory: api # Zips the contents of the API folder
-
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v4
-        with:
-          name: python-app
-          path: api/release.zip  # Tell it to look in the api folder
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    permissions:
-      id-token: write #This is required for requesting the JWT
-      contents: read #This is required for actions/checkout
-
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v4
-        with:
-          name: python-app
-        
-      - name: Login to Azure
+      - name: 'Login to Azure'
         uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_D105B30D603941248514E159026EA9D4 }}
@@ -76,5 +41,8 @@ jobs:
         with:
           app-name: 'IanMingCloudVisitCounter'
           slot-name: 'Production'
-          package: 'release.zip'  # Use a dot to mean "current folder"
-          
+          # Pointing directly to the folder removes all zip-structure errors
+          package: './api' 
+          # These two flags force Azure to install azure-cosmos on their end
+          scm-do-build-during-deployment: true
+          enable-oryx-build: true
