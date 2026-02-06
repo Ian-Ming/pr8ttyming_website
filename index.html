@@ -133,16 +133,31 @@
 
   <script>
     function showSection(sectionId) {
-        const sections = document.querySelectorAll('.view-section');
-        sections.forEach(section => {
-            section.classList.remove('active');
-        });
+    const sections = document.querySelectorAll('.view-section');
+    const profileSide = document.querySelector('.profile-side');
+    
+    // 1. Hide all sections and show the target one
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
 
-        const target = document.getElementById(sectionId);
-        if (target) {
-            target.classList.add('active');
-        }
+    const target = document.getElementById(sectionId);
+    if (target) {
+        target.classList.add('active');
     }
+
+    // 2. Mobile Logic: Hide profile when a specific view is selected
+    // But keep it visible if they click "home-view"
+    if (window.innerWidth < 850) {
+        if (sectionId === 'home-view') {
+            profileSide.style.display = 'flex';
+        } else {
+            profileSide.style.display = 'none';
+        }
+        // Scroll to top so they don't start halfway down the page
+        window.scrollTo(0, 0);
+    }
+}
 
     fetch('https://ianmingcloudvisitcounter-ewd0cjbgb4gdbmhs.centralus-01.azurewebsites.net/api/visitor_counter')
         .then(res => res.json())
@@ -160,51 +175,7 @@
 
     if (localStorage.getItem('theme') === 'light') {
         document.body.classList.add('light-mode');
-    }
-
-   const segmentCount = 12; 
-const dragonPoints = [];
-
-document.addEventListener('mousemove', (e) => {
-    // 1. SAFETY: Kill the script if on a touch device or small screen
-    if (window.innerWidth < 850 || ('ontouchstart' in window)) {
-        // Remove any stray segments if they exist
-        document.querySelectorAll('.dragon-segment').forEach(s => s.remove());
-        return; 
-    }
-    // 1. Efficiency: Only run if the mouse moved significantly
-    dragonPoints.unshift({ x: e.pageX, y: e.pageY });
-
-    // 2. Limit the array size
-    if (dragonPoints.length > segmentCount) {
-        dragonPoints.pop();
-    }
-
-    // 3. Remove existing segments to prevent element stacking (The Crash Fix)
-    const existing = document.querySelectorAll('.dragon-segment');
-    existing.forEach(s => s.remove());
-
-    // 4. Draw the segments
-    dragonPoints.forEach((point, index) => {
-        const segment = document.createElement('div');
-        segment.className = 'dragon-segment';
-        
-        // Scale and Opacity
-        const size = 16 - index;
-        const opacity = 1 - (index / segmentCount);
-        
-        segment.style.left = point.x + 'px';
-        segment.style.top = point.y + 'px';
-        segment.style.width = size + 'px';
-        segment.style.height = size + 'px';
-        segment.style.opacity = opacity;
-        
-        // The "Ming" Colors
-        segment.style.backgroundColor = index === 0 ? 'var(--secondary-color)' : 'var(--primary-color)';
-        
-        document.body.appendChild(segment);
-    });
-});
+    };
   </script>
 </body>
 </html>

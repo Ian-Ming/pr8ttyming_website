@@ -244,7 +244,14 @@ nav {
     }
 
     /* 2. Center the profile section */
+
+    @media (min-width: 851px) {
     .profile-side {
+        display: flex !important;
+    }
+    .profile-side {
+        display: flex; /* Default state for the Home view */
+        flex-direction: column;
         align-items: center;
         text-align: center;
     }
@@ -368,21 +375,3 @@ nav {
 
 /* Animations */
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-.dragon-segment {
-    position: absolute;
-    border-radius: 50%;
-    pointer-events: none; /* CRITICAL: Allows you to click the buttons through the trail */
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px var(--primary-color);
-    /* Prevent accidental selection or blocking */
-    user-select: none;
-    touch-action: none;
-}
-
-@keyframes flicker {
-    from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-    to { opacity: 0.7; transform: translate(-50%, -50%) scale(1.2); }
-}
-
