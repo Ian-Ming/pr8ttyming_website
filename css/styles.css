@@ -34,12 +34,14 @@ body.light-mode .dragon-segment {
 }
 
 body.light-mode .social-links .card {
-    background: #ffffff;
+    background-color: var(--card-bg);
     color: var(--text-heading);
+    border: 1px solid var(--border-color);
 }
 
 body.light-mode .social-links .card:hover {
-    color: #ffffff !important; /* Keep text white when background turns red */
+    background-color: var(--primary-color);
+    color: #ffffff !important;
 }
 
 body.light-mode .pill-container span {
@@ -115,6 +117,8 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 25px;
+    position: relative;
+    z-index: 10;
 }
 
 .profile-pic {
@@ -138,6 +142,9 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    position: relative;
+    z-index: 11;
+    cursor: pointer !important;
 }
 
 .social-links .card {
@@ -318,13 +325,13 @@ nav {
 .dragon-segment {
     position: absolute;
     border-radius: 50%;
-    pointer-events: none;
-    z-index: 10000;
+    pointer-events: none; /* CRITICAL: Allows you to click the buttons through the trail */
+    z-index: 9999;
     transform: translate(-50%, -50%);
-    /* Fire-like glow */
-    box-shadow: 0 0 15px var(--primary-color), 0 0 5px var(--secondary-color);
-    animation: flicker 0.5s infinite alternate;
-    segment.style.backgroundColor = index === 0 ? 'var(--secondary-color)' : 'var(--primary-color)';
+    box-shadow: 0 0 10px var(--primary-color);
+    /* Prevent accidental selection or blocking */
+    user-select: none;
+    touch-action: none;
 }
 
 @keyframes flicker {
