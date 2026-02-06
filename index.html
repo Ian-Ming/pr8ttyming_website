@@ -166,6 +166,12 @@
 const dragonPoints = [];
 
 document.addEventListener('mousemove', (e) => {
+    // 1. SAFETY: Kill the script if on a touch device or small screen
+    if (window.innerWidth < 850 || ('ontouchstart' in window)) {
+        // Remove any stray segments if they exist
+        document.querySelectorAll('.dragon-segment').forEach(s => s.remove());
+        return; 
+    }
     // 1. Efficiency: Only run if the mouse moved significantly
     dragonPoints.unshift({ x: e.pageX, y: e.pageY });
 
