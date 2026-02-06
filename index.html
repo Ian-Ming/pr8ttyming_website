@@ -132,50 +132,39 @@
   </main>
 
   <script>
-    function showSection(sectionId) {
+   function showSection(sectionId) {
     const sections = document.querySelectorAll('.view-section');
     const profileSide = document.querySelector('.profile-side');
     
-    // 1. Hide all sections and show the target one
-    sections.forEach(section => {
-        section.classList.remove('active');
-    });
-
+    sections.forEach(s => s.classList.remove('active'));
     const target = document.getElementById(sectionId);
-    if (target) {
-        target.classList.add('active');
-    }
+    if (target) target.classList.add('active');
 
-    // 2. Mobile Logic: Hide profile when a specific view is selected
-    // But keep it visible if they click "home-view"
     if (window.innerWidth < 850) {
-        if (sectionId === 'home-view') {
-            profileSide.style.display = 'flex';
-        } else {
-            profileSide.style.display = 'none';
-        }
-        // Scroll to top so they don't start halfway down the page
+        profileSide.style.display = (sectionId === 'home-view') ? 'flex' : 'none';
         window.scrollTo(0, 0);
     }
 }
 
+// Initialize things on Page Load
+document.addEventListener('DOMContentLoaded', () => {
+    // Visitor Counter
     fetch('https://ianmingcloudvisitcounter-ewd0cjbgb4gdbmhs.centralus-01.azurewebsites.net/api/visitor_counter')
         .then(res => res.json())
-        .then(data => {
-            document.getElementById('counter-display').innerText = data.count;
-        })
+        .then(data => { document.getElementById('counter-display').innerText = data.count; })
         .catch(err => console.error("Counter error:", err));
 
+    // Theme Toggle
     const themeToggle = document.getElementById('theme-toggle');
     themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('light-mode');
-        const isLight = document.body.classList.contains('light-mode');
-        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
     });
 
     if (localStorage.getItem('theme') === 'light') {
         document.body.classList.add('light-mode');
-    };
+    }
+});
   </script>
 </body>
 </html>
