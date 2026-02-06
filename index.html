@@ -154,13 +154,27 @@
     const sections = document.querySelectorAll('.view-section');
     const profileSide = document.querySelector('.profile-side');
     
-    sections.forEach(s => s.classList.remove('active'));
-    const target = document.getElementById(sectionId);
-    if (target) target.classList.add('active');
+    // 1. Reset all sections
+    sections.forEach(s => {
+        s.classList.remove('active');
+        s.style.display = 'none'; // Hard reset
+    });
 
+    // 2. Show the target
+    const target = document.getElementById(sectionId);
+    if (target) {
+        target.classList.add('active');
+        // If on desktop, we use flex. The CSS !important handles this, 
+        // but we add it here as a backup.
+        target.style.display = 'flex';
+    }
+
+    // 3. Profile Visibility Logic (Mobile vs Desktop)
     if (window.innerWidth < 850) {
         profileSide.style.display = (sectionId === 'home-view') ? 'flex' : 'none';
         window.scrollTo(0, 0);
+    } else {
+        profileSide.style.display = 'flex'; // Always show on desktop
     }
 }
 

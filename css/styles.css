@@ -194,16 +194,25 @@ nav {
     transform: translateY(-2px);
 }
 
-/* FORCE VISIBILITY */
+/* --- SECTION VISIBILITY FIX --- */
 .view-section {
-    display: none;
+    display: none; /* Hidden by default */
     opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
+/* The .active class MUST use flex and !important to override the display: none */
 .view-section.active {
-    display: flex !important; /* Forces the active section to show */
+    display: flex !important; 
     flex-direction: column;
-    animation: fadeIn 0.4s ease forwards;
+    opacity: 1;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animation for smooth transitions */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Stats Grid for Experience Page */
