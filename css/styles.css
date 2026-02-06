@@ -182,30 +182,39 @@ nav {
     }
 }
 
-.timeline-item {
+/* Simple, clean content blocks */
+.content-block {
     border-left: 2px solid var(--primary-color);
-    padding-left: 25px;
+    padding-left: 20px;
     margin-bottom: 30px;
-    position: relative;
 }
 
-.timeline-item::before {
-    content: '🌸'; /* The Sakura node */
-    position: absolute;
-    left: -13px;
-    top: 0;
-    font-size: 1rem;
-    filter: drop-shadow(0 0 5px var(--primary-color));
+.content-block h3 {
+    font-size: 1.2rem;
+    color: var(--text-heading);
+    margin-bottom: 5px;
 }
 
-.timeline-item ul {
+.content-block ul {
     margin-top: 10px;
     padding-left: 20px;
-    list-style-type: circle;
+    color: var(--text-body);
 }
 
-.timeline-item h3 {
-    margin-bottom: 5px;
+.content-block li {
+    margin-bottom: 8px;
+}
+
+/* Fix for the "Get to Know Me" grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .info-grid { grid-template-columns: 1fr; }
 }
 
 
