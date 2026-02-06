@@ -1,28 +1,65 @@
 :root {
-    --bg-color: #0d0d0f;
-    --card-bg: #161618;
-    --primary-color: #ffb7c5;     /* Sakura Pink */
+    /* Ming Dynasty Palette */
+    --bg-color: #0a0a0b;          /* Pure Ink */
+    --card-bg: #121214;           /* Charcoal */
+    --primary-color: #e63946;     /* Imperial Red */
+    --secondary-color: #ffb703;   /* Gold Accent */
     --text-heading: #ffffff;
     --text-body: #a0a0a5;
-    --border-color: rgba(255, 183, 197, 0.1);
+    --border-color: rgba(230, 57, 70, 0.2);
+    --accent-glow: rgba(230, 57, 70, 0.3);
     --font-main: 'Inter', system-ui, sans-serif;
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Inter', sans-serif;
+    --primary-color: #e63946; /* Imperial Red */
 }
 
+/* --- Imperial Light Mode --- */
 body.light-mode {
-    --bg-color: #fdf6f7;
-    --card-bg: #ffffff;
-    --primary-color: #d44d68;
-    --text-heading: #2d2d2d;
-    --text-body: #555555;
-    --border-color: rgba(212, 77, 104, 0.1);
+    --bg-color: #fdfbf7;          /* Soft Parchment/Paper */
+    --card-bg: #ffffff;           /* Pure White Cards */
+    --primary-color: #b91d1d;     /* Deeper "Blood Red" for contrast */
+    --secondary-color: #d97706;   /* Darker Gold/Amber */
+    --text-heading: #1a1a1a;      /* Deep Charcoal */
+    --text-body: #4b5563;         /* Slate Gray */
+    --border-color: rgba(185, 29, 29, 0.1);
+    --accent-glow: rgba(185, 29, 29, 0.05);
+    background-image: radial-gradient(#e5e7eb 0.5px, transparent 0.5px);
+    background-size: 24px 24px;
+}
+
+/* Light Mode specific tweaks for the Dragon and Links */
+body.light-mode .dragon-segment {
+    box-shadow: 0 0 10px rgba(185, 29, 29, 0.2);
+}
+
+body.light-mode .social-links .card {
+    background: #ffffff;
+    color: var(--text-heading);
+}
+
+body.light-mode .social-links .card:hover {
+    color: #ffffff !important; /* Keep text white when background turns red */
+}
+
+body.light-mode .pill-container span {
+    background: rgba(185, 29, 29, 0.05);
+    border-color: rgba(185, 29, 29, 0.2);
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-body);
-    font-family: var(--font-main);
+    font-family: var(--font-body);
     transition: all 0.4s ease;
     line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--text-heading);
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* --- NAVIGATION (Fixed) --- */
@@ -49,6 +86,16 @@ nav {
     color: var(--text-body);
     font-size: 0.9rem;
     transition: color 0.3s;
+}
+
+.pagoda-icon {
+    color: var(--primary-color);
+    filter: drop-shadow(0 0 8px var(--primary-color));
+}
+
+.nav-logo {
+    color: var(--text-heading);
+    letter-spacing: 3px;
 }
 
 .nav-links a:hover { color: var(--primary-color); }
@@ -118,10 +165,9 @@ nav {
 /* Hover State - makes the button pop */
 .social-links .card:hover {
     background-color: var(--primary-color);
-    color: #0d0d0f !important; /* Makes text dark when background is pink */
-    border-color: var(--primary-color);
-    transform: translateX(5px);
-    box-shadow: 0 0 15px var(--accent-glow);
+    color: white !important;
+    border-color: var(--secondary-color); /* Gold border on hover */
+    box-shadow: 0 0 20px var(--accent-glow);
 }
 
 /* --- RIGHT SIDE (Content) --- */
@@ -163,7 +209,22 @@ nav {
     cursor: pointer;
 }
 
-.nav-logo { font-size: 1.5rem; font-weight: 900; color: var(--text-heading); }
+.nav-logo { 
+    font-size: 1.5rem; font-weight: 900; color: var(--text-heading);
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--text-heading);
+    letter-spacing: 4px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-logo::first-letter {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+}
 
 /* --- RESPONSIVE MOBILE VIEW --- */
 @media (max-width: 850px) {
@@ -254,6 +315,20 @@ nav {
 /* Animations */
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-.cursor-petal { position: absolute; pointer-events: none; z-index: 9999;
+.dragon-segment {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    /* Fire-like glow */
+    box-shadow: 0 0 15px var(--primary-color), 0 0 5px var(--secondary-color);
+    animation: flicker 0.5s infinite alternate;
+    segment.style.backgroundColor = index === 0 ? 'var(--secondary-color)' : 'var(--primary-color)';
+}
+
+@keyframes flicker {
+    from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    to { opacity: 0.7; transform: translate(-50%, -50%) scale(1.2); }
 }
 

@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <title>Hi, I am Ian Ming</title>
 </head>
 <body>
@@ -157,6 +161,41 @@
     if (localStorage.getItem('theme') === 'light') {
         document.body.classList.add('light-mode');
     }
+
+    const dragonPoints = [];
+const segmentCount = 12; // Length of the dragon
+
+document.addEventListener('mousemove', (e) => {
+    // Add new position to the start of the array
+    dragonPoints.unshift({ x: e.pageX, y: e.pageY });
+
+    // Remove old segments
+    if (dragonPoints.length > segmentCount) {
+        dragonPoints.pop();
+    }
+
+    // Clear old trail elements
+    document.querySelectorAll('.dragon-segment').forEach(s => s.remove());
+
+    // Draw new segments
+    dragonPoints.forEach((point, index) => {
+        const segment = document.createElement('div');
+        segment.className = 'dragon-segment';
+        
+        // Make the "head" (index 0) bigger and redder
+        const size = 18 - index; 
+        const opacity = 1 - (index / segmentCount);
+        
+        segment.style.left = point.x + 'px';
+        segment.style.top = point.y + 'px';
+        segment.style.width = size + 'px';
+        segment.style.height = size + 'px';
+        segment.style.opacity = opacity;
+        segment.style.backgroundColor = index === 0 ? 'var(--secondary-color)' : 'var(--primary-color)';
+        
+        document.body.appendChild(segment);
+    });
+});
   </script>
 </body>
 </html>
