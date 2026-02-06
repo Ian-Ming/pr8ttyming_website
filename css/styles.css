@@ -76,6 +76,16 @@ nav {
     border: 3px solid var(--border-color);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
+.profile-side h3 {
+    color: var(--primary-color);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    display: inline-block;
+    padding-bottom: 5px;
+}
 
 .social-links {
     display: flex;
@@ -89,6 +99,29 @@ nav {
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
+    color: var(--text-heading); /* Keeps text white/light by default */
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+/* --- Social Link Button Reset --- */
+
+/* This is the part that kills the blue/purple color */
+.social-links .card:visited, 
+.social-links .card:active {
+    color: var(--text-heading); /* Keeps it from turning purple */
+}
+
+/* Hover State - makes the button pop */
+.social-links .card:hover {
+    background-color: var(--primary-color);
+    color: #0d0d0f !important; /* Makes text dark when background is pink */
+    border-color: var(--primary-color);
+    transform: translateX(5px);
+    box-shadow: 0 0 15px var(--accent-glow);
 }
 
 /* --- RIGHT SIDE (Content) --- */
