@@ -304,10 +304,21 @@ nav {
 
     /* Hide the text "Toggle Theme" on mobile, keep just the icon */
     #theme-toggle {
-        font-size: 1.2rem;
-        padding: 5px 10px;
-        grid-column: span 1;
-    }
+    background: var(--card-bg);
+    border: 1px solid var(--primary-color);
+    border-radius: 50%; /* Makes it a nice circle */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#theme-toggle:hover {
+    box-shadow: 0 0 10px var(--primary-color);
+}
 
     /* Make visitor count small and discreet at the bottom of the nav */
     .nav-links p {
