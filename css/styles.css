@@ -194,8 +194,50 @@ nav {
     transform: translateY(-2px);
 }
 
-.view-section { display: none; }
-.view-section.active { display: flex; flex-direction: column; }
+/* FORCE VISIBILITY */
+.view-section {
+    display: none;
+    opacity: 0;
+}
+
+.view-section.active {
+    display: flex !important; /* Forces the active section to show */
+    flex-direction: column;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+/* Stats Grid for Experience Page */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.stat-item {
+    background: rgba(230, 57, 70, 0.05);
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.stat-item h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+}
+
+.stat-item p {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 40px 0;
+}
 
 /* --- MOBILE FIXES --- */
 @media (max-width: 850px) {
