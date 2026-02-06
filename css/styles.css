@@ -53,9 +53,13 @@ nav {
 .nav-logo {
     font-family: var(--font-heading);
     font-weight: 900;
-    font-size: 1.5rem;
-    color: var(--text-heading);
-    letter-spacing: 2px;
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+}
+
+.nav-logo::first-letter {
+    color: var(--primary-color);
+    font-size: 2.2rem;
 }
 
 .nav-links {
@@ -68,6 +72,32 @@ nav {
     text-decoration: none;
     color: var(--text-body);
     font-size: 0.85rem;
+}
+
+#theme-toggle {
+    background: transparent; /* Removes the box */
+    border: 1px solid var(--border-color);
+    color: var(--primary-color);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    outline: none; /* Removes the blue/white focus frame */
+    -webkit-tap-highlight-color: transparent; /* Fix for mobile tap frame */
+}
+
+#theme-toggle:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px var(--accent-glow);
+    transform: rotate(15deg);
+}
+
+.mode-icon {
+    font-size: 1.2rem;
 }
 
 /* Grid Layout */
@@ -97,14 +127,58 @@ nav {
 
 .social-links a {
     display: block;
-    padding: 10px;
-    margin-bottom: 8px;
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 12px;
     text-align: center;
     text-decoration: none;
-    border: 1px solid var(--border-color);
-    color: var(--text-heading);
+    font-family: var(--font-heading); /* Back to the strong Serif */
+    font-weight: 700;
+    letter-spacing: 1px;
     border-radius: 8px;
-    font-family: var(--font-heading);
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-heading) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* The Animation Fix */
+.social-links a:hover {
+    background-color: var(--primary-color);
+    color: white !important;
+    border-color: var(--secondary-color);
+    transform: translateX(8px); /* Subtle slide-out effect */
+    box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.social-links a:active {
+    transform: scale(0.98);
+}
+
+.pill-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.pill-container span {
+    background: rgba(230, 57, 70, 0.1); /* Subtle Red tint */
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    padding: 6px 16px;
+    border-radius: 50px; /* Makes it a pill */
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.pill-container span:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
 }
 
 .view-section { display: none; }
