@@ -299,7 +299,47 @@ nav {
     border-color: rgba(45, 212, 191, 0.2);
 }
 /* --- MOBILE --- */
-@media (max-width: 850px) {
-    .container { grid-template-columns: 1fr; margin-top: 20px; }
-    nav { flex-direction: column; gap: 15px; }
+/* Mobile Responsiveness Fix */
+@media (max-width: 768px) {
+    
+    /* 1. Fix the Header/Logo */
+    header {
+        display: block !important; /* Forces vertical stacking */
+        text-align: center;
+    }
+
+    .logo {
+        font-size: 1.5rem; /* Shrink the 'Ming's Portfolio' text so it fits */
+        margin-bottom: 15px;
+    }
+
+    /* 2. Fix the Navigation Links */
+    nav ul {
+        display: flex;
+        flex-direction: column; /* Stack 'Experience', 'Projects', etc. vertically */
+        gap: 10px;
+        padding: 0;
+    }
+
+    /* 3. Fix the "Get to Know Me" Grid */
+    .hobby-grid, .split-grid {
+        display: block !important; /* Stack your square cards vertically */
+    }
+
+    .hobby-card, .info-block {
+        width: 100%;
+        margin-bottom: 20px;
+        aspect-ratio: auto; /* Remove the square ratio on mobile so text doesn't overflow */
+    }
+
+    /* 4. Fix the Headshot & Info */
+    .profile-container {
+        display: block;
+        text-align: center;
+    }
+
+    .profile-img {
+        width: 80%; /* Don't let the photo take up the whole screen width */
+        margin: 0 auto 20px auto;
+    }
 }
