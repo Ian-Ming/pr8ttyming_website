@@ -159,6 +159,60 @@ nav {
     font-weight: 700;
     opacity: 0.8;
 }
+
+.hobby-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.hobby-card.personal-vibe {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    aspect-ratio: 1 / 1; /* Forces the Square Ratio */
+    background: var(--card-bg);
+    border: 1px solid rgba(79, 70, 229, 0.2); /* Subtle Indigo Border */
+    padding: 25px;
+    border-radius: 16px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* The Vibe Shift: Indigo to Teal */
+.hobby-card.personal-vibe:hover {
+    border-color: #2dd4bf; /* Teal */
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(45, 212, 191, 0.1);
+    background: linear-gradient(145deg, var(--card-bg), #0f172a); /* Deep Indigo tint */
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #4f46e5; /* Indigo */
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+}
+
+.hobby-emoji {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.hobby-card h3 {
+    font-family: var(--font-heading);
+    color: #f8fafc;
+    margin-bottom: 10px;
+}
 /* --- PROFILE SIDE --- */
 .profile-side { display: flex; flex-direction: column; gap: 20px; }
 .profile-pic { width: 100%; border-radius: 15px; border: 2px solid var(--border-color); }
@@ -237,6 +291,12 @@ nav {
 
 .experience-box .pill-container {
     margin-top: 20px;
+}
+
+.hobby-card.personal-vibe .pill-container span {
+    background: rgba(45, 212, 191, 0.1);
+    color: #2dd4bf;
+    border-color: rgba(45, 212, 191, 0.2);
 }
 /* --- MOBILE --- */
 @media (max-width: 850px) {
