@@ -1,287 +1,247 @@
-<!DOCTYPE HTML>
-	<html lang="en">
-  		<head>
-    		<title>Ian Ming | Cloud Portfolio</title>
-    			<meta charset="utf-8">
-    			<meta name="viewport" content="width=device-width, initial-scale=1">
-    			<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-    			<link rel="stylesheet" href="assets/css/main.css?v=20260122a">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Ian Ming's Portfolio</title>
+</head>
+<body>
+  <nav>
+    <div class="nav-logo">
+        <span class="pagoda-icon">⛩️</span> MING's Portfolio
+    </div>
+    <div class="nav-links">
+        <a href="#" onclick="showSection('home-view')">Home</a>
+        <a href="#" onclick="showSection('education-view')">Education</a>
+        <a href="#" onclick="showSection('experience-view')">Experience</a>
+        <a href="#" onclick="showSection('projects-view')">Projects</a>
+        <a href="#" onclick="showSection('get-to-know-me-view')">Get To Know Me</a>
+        <button id="theme-toggle" title="Toggle Dark/Light Mode"><span class="mode-icon">🌓</span></button>
+        <p>Visitor Count: <span id="counter-display">Loading...</span></p>
+    </div>
+  </nav>
 
-  		</head>
-  			<body class="is-preload">
-
-		<!-- Nav -->
-		<nav id="nav">
-			<ul class="container">
-				<li><a href="#top">Top</a></li>
-				<li><a href="#work">Work</a></li>
-				<li><a href="#projects">Portfolio</a></li>
-				<li><a href="#resume">Resume</a></li>
-				<li><a href="#contact">Contact</a></li>
-			</ul>
-		</nav>
-
-		<!-- Home -->
-		<article id="top" class="wrapper style1">
-  			<div class="container hero-single">
-    			<span class="hero-image">
-     			 	<img src="images/Headshot.jpg" alt="Headshot of Ian Ming">
-    			</span>
-
-    			<header class="hero-header">
-      				<h1>Hi. I'm <strong>Ian Ming</strong>.</h1>
-    			</header>
-
-    			<p class="hero-text">
-     				 Business and IT student with hands-on experience deploying and maintaining
-      				static websites using cloud-based workflows. Focused on translating
-      				business needs into practical technical solutions while building toward a
-      				career in cloud and IT operations.
-    			</p>
-
-    			<a href="#work" class="button large scrolly hero-button">
-      				Learn about what I do
-   			 	</a>
-  			</div>
-		</article>
-
-
-		<!-- Work -->
-		<article id="work" class="wrapper style2">
-			<div class="container">
-				<header>
-					<h2>What I do</h2>
-					<p>Cloud-first websites and infrastructure—built to be reliable,
-						maintainable, and easy to deploy.</p>
-				</header>
-
-				<div class="row aln-center">
-					<div class="col-4 col-6-medium col-12-small">
-						<section class="box style1">
-							<span class="icon solid featured fa-cloud"></span>
-							<h3>Deployments & CI/CD</h3>
-							<p>GitHub Actions pipelines that automatically build and deploy changes
-								to Azure Static Web Apps with clean version control.</p>
-						</section>
-					</div>
-					<div class="col-4 col-6-medium col-12-small">
-						<section class="box style1">
-							<span class="icon solid featured fa-cogs"></span>
-							<h3>Cloud & IT Operations</h3>
-							<p>DNS, domains, SSL, monitoring basics, and troubleshooting—focused on
-								keeping systems stable and secure.</p>
-						</section>
-					</div>
-					<div class="col-4 col-6-medium col-12-small">
-						<section class="box style1">
-							<span class="icon solid featured fa-chart-bar"></span>
-							<h3>Consulting Mindset</h3>
-							<p>I translate business needs into practical technical solutions—scoping,
-								documenting, and improving processes.</p>
-						</section>
-					</div>
-				</div>
-				<footer>
-					<p>Want the details? Check out the projects below.</p>
-					<a href="#projects" class="button large scrolly">See my projects</a>
-				</footer>
-			</div>
-		</article>
-
-		<!-- Portfolio -->
-		<article id="projects" class="wrapper style3">
-  			<div class="container">
-    			<header>
-      				<h2>Projects</h2>
-      				<p>Hands-on builds focused on Azure, automation, and real deployment workflows.</p>
-    			</header>
-
-    			<div class="row">
-      				<div class="col-4 col-6-medium col-12-small">
-        				<article class="box style2">
-          					<a href="https://github.com/Ian-Ming/pr8ttyming_website.git" class="image featured">
-            					<img src="images/pic01.jpg" alt="IanMingCloud Portfolio on Azure" />
-          					</a>
-          					<h3><a href="https://github.com/Ian-Ming/pr8ttyming_website.git">Azure Static Web App Portfolio</a></h3>
-          					<p>Designed and deployed a cloud-hosted personal portfolio using a static web architecture.</p>
-        				</article>
-      				</div>
-
-      				<div class="col-4 col-6-medium col-12-small">
-        				<article class="box style2">
-          					<a href="#" class="image featured">
-            					<img src="images/pic02.jpg" alt="" />
-          					</a>
-          					<h3><a href="#">Small Business Website Delivery Workflow</a></h3>
-          					<p>Structured process for delivering static websites from requirements to deployment.</p>
-        				</article>
-      				</div>
-    			</div>
-
-    			<footer>
-      				<a href="#contact" class="button large scrolly">Get in touch with me</a>
-    			</footer>
-  			</div>
-		</article>
-
-
-			<!-- Resume Highlights -->
-	<article id="resume" class="wrapper style2">
-  		<div class="container">
-    	<header>
-      		<h2>Resume Highlights</h2>
-      		<p>I’m building my career in cloud and IT operations, with hands-on experience deploying sites, setting up automation, and supporting real-world operations.</p>
-    	</header>
-
-    <!-- Row 1: three highlight cards -->
-    <div class="row aln-center">
-      <div class="col-4 col-6-medium col-12-small">
-        <section class="box style1">
-          <span class="icon solid featured fa-cloud"></span>
-          <h3>Cloud & Automation</h3>
-          <p>Azure fundamentals, static web hosting, custom domains/DNS, and GitHub Actions for CI/CD.</p>
-        </section>
-      </div>
-
-      <div class="col-4 col-6-medium col-12-small">
-        <section class="box style1">
-          <span class="icon solid featured fa-users"></span>
-          <h3>Client-Facing Execution</h3>
-          <p>Comfortable translating needs into solutions—documenting, communicating updates, and delivering on timelines.</p>
-        </section>
-      </div>
-
-      <div class="col-4 col-6-medium col-12-small">
-        <section class="box style1">
-          <span class="icon solid featured fa-briefcase"></span>
-          <h3>Operations Mindset</h3>
-          <p>Detail-oriented, reliable, and process-driven—focused on stability, safety, and continuous improvement.</p>
-        </section>
-      </div>
+  <main>
+    <section class="container">
+        <div class="profile-side">
+            <img src="images/headshot.png" class="profile-pic" alt="Ian Ming">
+            <h3>Connect with me</h3>
+            <div class="social-links">
+                <a href="https://ianming.carrd.co/" class="card" target="_blank" rel="noopener noreferrer">Contact</a>
+                <a href="https://github.com/Ian-Ming" class="card" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/ian-ming-153722285" class="card" target="_blank" rel="noopener noreferrer">Linkedin</a>
+                <a href="https://docs.google.com/document/d/1Xi_zTr0ldmQhw7PWobywpeKI_ELqtf3dk4NsV4x3uiY/edit?usp=sharing" rel="noopener noreferrer"" class="card" target="_blank">Resume</a>
+            </div>
+        </div>
+        <div class="content-side">
+            <div id="home-view" class="view-section active">
+    <div class="card bio-card">
+        <h1>Ian Ming</h1>
+        <div class="uni-subhead"> Business Administration • York University (2026) </div>
+        <p> Ian Ming is a Business and IT student with hands-on experience deploying and maintaining static websites using cloud-based workflows. Focused on translating business needs into practical technical solutions while building toward a career in cloud and IT operations.</p>
+    </div>
+    
+    <div class="card skills-card">
+        <h3>Technical Skills & Software</h3>
+        <div class="pill-container">
+            <span>Python</span>
+            <span>Git</span>
+            <span>HTML/CSS</span>
+        </div>
+    </div>
+    
+    <div class="card tools-card">
+        <h3>Tools</h3>
+        <div class="pill-container">
+            <span>VS Code</span>
+            <span>Bash</span>
+            <span>Excel</span>
+            <span>Azure</span>
+        </div>
+    </div>
+</div>
+    <div id="education-view" class="view-section">
+        <div class="card">
+            <h2>Education</h2>
+            <div class="content-block">
+                <h3>York University (NE)</h3>
+                <div class="uni-subhead">B.S. Business Administration • Class of 2026</div>
+                <p>Focusing on the intersection of corporate strategy and IT infrastructure.</p>
+            </div>
+            <div class="content-block">
+                <h3>PG Community College (Largo, MD)</h3>
+                <div class="uni-subhead">General Studies • Graduated 2024</div>
+                <p>Applied Azure cloud fundamentals to business migration case studies.</p>
+            </div>
+            <div class="pill-container">
+                <span>Terp Young Scholars (UMD)</span>
+                <span>10th & 11th Grade Accepted Scholar</span>
+            </div>
+        </div>
     </div>
 
-    <!-- Row 2: tools + focus -->
-    <div class="row">
-      <div class="col-6 col-12-medium">
-        <section class="box style1">
-          <h3>Tools & Technologies</h3>
-          <p>Azure Static Web Apps • Azure DNS • GitHub Actions • Git/GitHub • HTML/CSS • Basic networking/DNS • Windows/macOS troubleshooting</p>
-        </section>
-      </div>
+    <div id="experience-view" class="view-section">
+    <div class="card">
+        <h2>Experience & Strategic Analysis</h2>
+        <div class="experience-grid">
+            
+            <a href="https://medium.com/@pro.mingian/scaling-the-warmth-how-one-iot-startup-overcame-a-22-000-infrastructure-hurdle-a492226ec7ab" class="experience-box" target="_blank">
+                <div class="exp-content">
+                    <div class="exp-header">
+                        <h3>IntelliHeat Azure Migration</h3>
+                        <span class="exp-date">2024</span>
+                    </div>
+                    <p>Strategic TCO analysis and cloud architecture proposal for a $22,000 IoT migration to Microsoft Azure.</p>
+                </div>
+                <div class="pill-container">
+                    <span>Cloud Strategy</span>
+                    <span>TCO Analysis</span>
+                    <span>Azure IoT Hub</span>
+                </div>
+            </a>
 
-      <div class="col-6 col-12-medium">
-        <section class="box style1">
-          <h3>Focus Areas</h3>
-          <p>Cloud/IT Operations • CI/CD automation • Reliable web hosting • Documentation • Client communication • Process improvement</p>
-        </section>
-      </div>
+            <a href="https://docs.google.com/document/d/1YV6pQb1uVkYwfxu3LD2AYx3duR_MKmNk_qvoC7Nxork/edit?usp=sharing" class="experience-box" target="_blank">
+                <div class="exp-content">
+                    <div class="exp-header">
+                        <h3>Family Dollar Consulting</h3>
+                        <span class="exp-date">2025-2026</span>
+                    </div>
+                    <p>Deep-dive analysis into corporate fiscal vitality and supply chain logistics for the upcoming fiscal year.</p>
+                </div>
+                <div class="pill-container">
+                    <span>Fiscal Analysis</span>
+                    <span>Supply Chain</span>
+                    <span>Operations</span>
+                </div>
+            </a>
+
+        </div>
     </div>
+</div>
 
-    <!-- Row 3: experience -->
-    <div class="row">
-      <div class="col-12">
-        <section class="box style1">
-          <h3>Experience Highlights</h3>
-          <ul>
-            <li><strong>University of Maryland – IT Intern:</strong> Supported desktop maintenance and basic IT operations, including hardware replacement and troubleshooting; gained early exposure to coding and technical project work.</li>
-            <li><strong>Lowe’s – Sales Associate (Hardware & Tools):</strong> Customer-facing role focused on explaining technical products clearly, ensuring safe usage, resolving issues, and maintaining high satisfaction—experience directly applicable to client-facing IT support and consulting.</li>
-            <li><strong>Winkler Pool Management &amp; M-NCPPC – Pool Service Technician / Lifeguard:</strong> Operations-focused role responsible for safety, sanitation standards, and reliability across multiple facilities and private properties in the DMV and Chesapeake Bay area.</li>
-            <li><strong>Xfinity Center &amp; UMD Diner – Food Service:</strong> Worked in high-volume environments with strict cleanliness, safety, and operational standards—experience in following procedures and performing under pressure.</li>
-          </ul>
-        </section>
-      </div>
+<div id="projects-view" class="view-section">
+    <div class="card">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            
+            <a href="https://github.com/Ian-Ming/Small-Business-Website-Delivery-Workflow.git" class="project-box" target="_blank">
+                <div class="project-content">
+                    <h3>Small Business Delivery Workflow</h3>
+                    <p>Modeling a real-world cloud pipeline for static site delivery using Azure and GitHub Actions.</p>
+                </div>
+                <div class="pill-container">
+                    <span>Azure</span>
+                    <span>GitHub Actions</span>
+                    <span>CI/CD</span>
+                </div>
+            </a>
+
+            <a href="https://github.com/Ian-Ming/IanMingCloud_Website.git" class="project-box" target="_blank">
+                <div class="project-content">
+                    <h3>Cloud Resume Challenge</h3>
+                    <p>A full-stack serverless application featuring an Azure Function API and Cosmos DB integration.</p>
+                </div>
+                <div class="pill-container">
+                    <span>Python</span>
+                    <span>Cosmos DB</span>
+                    <span>Azure Functions</span>
+                </div>
+            </a>
+
+        </div>
     </div>
+</div>
 
-    <footer>
-      <p>Download my full resume or reach out to connect.</p>
-      <a href="assets/Ian-Ming-Resume.pdf" class="button" target="_blank" rel="noopener">Download Resume (PDF)</a>
-      <a href="#contact" class="button large scrolly">Contact Me</a>
-    </footer>
-  </div>
-</article>
+    <div id="get-to-know-me-view" class="view-section">
+        <div class="card">
+            <h2>Beyond the Cloud</h2>
+            <div class="hobby-grid">
+                <div class="hobby-item">
+                    <span>🏋️</span>
+                    <h3>York Athletics</h3>
+                    <p>Weightlifting and team basketball.</p>
+                </div>
+                <div class="hobby-item">
+                    <span>📽️</span>
+                    <h3>Cinema & Literature</h3>
+                    <p>Alexis Henderson (<em>An Academy for Liars</em>) and <em>House in the Cerulean Sea</em>.</p>
+                </div>
+                <div class="hobby-item">
+                    <span>🏙️</span>
+                    <h3>DC & Baltimore</h3>
+                    <p>Exploring thrift culture and abandoned architecture.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div></section>
+  </main>
 
+  <script>
+   function showSection(sectionId) {
+    const sections = document.querySelectorAll('.view-section');
+    const profileSide = document.querySelector('.profile-side');
+    
+    // 1. Reset all sections
+    sections.forEach(s => {
+        s.classList.remove('active');
+        s.style.display = 'none'; // Hard reset
+    });
 
-							<!-- Contact -->
-							<article id="contact" class="wrapper style4">
-								<div class="container medium">
-									<header>
-										<h2>Let’s Connect</h2>
-										<p>I’m open to entry-level opportunities in cloud, IT operations, and business technology, as well as select small business web projects.
-											 If you’re interested in working together or starting a conversation, feel free to reach out.</p>
-									</header>
-									<div class="row">
-										<div class="col-12">
-											<p id="form-status" style="display:none; margin-bottom: 1rem;"> Thanks — your message was sent. I’ll get back to you soon.</p>
-											<form method="POST" action="https://formspree.io/f/mdaavpkn">
+    // 2. Show the target
+    const target = document.getElementById(sectionId);
+    if (target) {
+        target.classList.add('active');
+        // If on desktop, we use flex. The CSS !important handles this, 
+        // but we add it here as a backup.
+        target.style.display = 'flex';
+    }
 
-  												<input type="hidden" name="_subject" value="New message from ianmingcloud.com" />
-  												<input type="hidden" name="_captcha" value="false" />
-												<input type="hidden" name="_next" value="https://ianmingcloud.com/#contact?success=1" />
+    // 3. Profile Visibility Logic (Mobile vs Desktop)
+    if (window.innerWidth < 850) {
+        profileSide.style.display = (sectionId === 'home-view') ? 'flex' : 'none';
+        window.scrollTo(0, 0);
+    } else {
+        profileSide.style.display = 'flex'; // Always show on desktop
+    }
+}
 
-  												<div class="row">
-    												<div class="col-6 col-12-small">
-      													<input type="text" name="name" placeholder="Name" required />
-   													</div>
+// Initialize things on Page Load
+document.addEventListener('DOMContentLoaded', () => {
+    // Visitor Counter
+    fetch('https://ianmingcloudvisitcounter-ewd0cjbgb4gdbmhs.centralus-01.azurewebsites.net/api/visitor_counter')
+        .then(res => res.json())
+        .then(data => { document.getElementById('counter-display').innerText = data.count; })
+        .catch(err => console.error("Counter error:", err));
 
-    												<div class="col-6 col-12-small">
-      													<input type="email" name="email" placeholder="Email" required />
-    												</div>
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    });
 
-    												<div class="col-12">
-      													<input type="text" name="subject" placeholder="Subject" />
-    												</div>
+    if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-mode');
+    }
+});
 
-    												<div class="col-12">
-      													<textarea name="message" placeholder="Message" required></textarea>
-    												</div>
-
-    												<div class="col-12">
-      													<ul class="actions">
-        													<li><button type="submit">Send Message</button></li>
-        													<li><input type="reset" value="Clear Form" class="alt" /></li>
-      													</ul>
-    												</div>
-  												</div>
-											</form>
-										</div>
-										<div class="col-12">
-											<hr />
-											<h3>Find me on ...</h3>
-											<ul class="social">
-												<li><a href="#" class="icon brands fa-facebook-f"><span
-															class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands fa-linkedin-in"><span
-															class="label">LinkedIn</span></a></li>
-												<li><a href="#" class="icon brands fa-github"><span
-															class="label">Github</span></a></li>
-											</ul>
-											<hr />
-										</div>
-									</div>
-									<footer>
-										<ul id="copyright">
-											<li>&copy; Untitled. All rights reserved.</li><li>Design: <a
-													href="http://html5up.net">HTML5 UP</a></li>
-										</ul>
-									</footer>
-								</div>
-							</article>
-
-							<!-- Scripts -->
-							<script src="assets/js/jquery.min.js"></script>
-							<script src="assets/js/jquery.scrolly.min.js"></script>
-							<script src="assets/js/browser.min.js"></script>
-							<script src="assets/js/breakpoints.min.js"></script>
-							<script src="assets/js/util.js"></script>
-							<script src="assets/js/main.js" defer></script>
-
-							<script>
-  							// Show success message after Formspree redirect
-  							if (window.location.search.includes("success")) {
-    						const status = document.getElementById("form-status");
-    						if (status) status.style.display = "block";
-  							}
-  							</script>
-
-						</body>
-	</html>
+document.getElementById('last-updated').innerText = new Date().toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+});
+  </script>
+  <footer>
+    <div class="footer-content">
+        <p>&copy; 2026 Ian Ming. All rights reserved.</p>
+        <p>Last Updated: <span id="last-updated"></span></p>
+    </div>
+</footer>
+</body>
+</html>
