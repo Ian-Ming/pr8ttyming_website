@@ -24,7 +24,7 @@
         <div class="nav-utils">
             <button id="theme-toggle" title="Toggle Mode">🌓</button>
             <div class="visitor-counter">
-                VC: <span id="counter-display">...</span>
+                VisitorCounter: <span id="counter-display">...</span>
             </div>
         </div>
     </nav>
@@ -254,11 +254,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-document.getElementById('last-updated').innerText = new Date().toLocaleDateString('en-US', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric'
-});
+const lastUpdatedElement = document.getElementById('last-updated');
+
+if (lastUpdatedElement) {
+    lastUpdatedElement.innerText = new Date().toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric'
+    });
+}
   </script>
   <footer>
     <div class="footer-content">
